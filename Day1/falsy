@@ -1,0 +1,14 @@
+Falsy Values in JavaScript
+-----------------------------
+
+Falsy values are values that are treated as false in conditions.
+
+Falsy Value	                    Example
+false	                        if(false)
+0	                            if(0)
+"" (empty string)	            if("")
+null	                        if(null)
+undefined	                    if(undefined)
+NaN	                             if(NaN)
+
+All other values are truthy.
