@@ -65,3 +65,53 @@ console.log(sum);
 var sum = function() {
   return 5 + 5;
 };
+
+
+//1. var Hoisting (Declaration is hoisted, value is NOT)
+console.log(a); 
+var a = 10;
+
+
+//JavaScript internally does:
+
+var a;          // hoisted
+console.log(a); // undefined
+a = 10;         // assignment happens later
+
+//2. let and const Hoisting (but in TDZ → error)
+
+//They are hoisted but cannot be used before declaration.
+
+console.log(m); // ReferenceError
+let m = 5;
+
+
+//Internally:
+
+// x is hoisted but in Temporal Dead Zone (TDZ)
+console.log(x); // error
+let x = 5;
+
+//3. Function Declaration Hoisting
+
+//Function declarations are fully hoisted.
+
+sayHi(); // works!
+
+function sayHi() {
+  console.log("Hello");
+}
+
+//4. Function Expression is NOT hoisted (variable is, but undefined)
+greet();            // TypeError: greet is not a function
+
+var greet = function () {
+  console.log("Hi");
+};
+
+
+//Internally:
+
+var greet;   // hoisted as undefined
+greet();     // greet is undefined → TypeError
+//greet = function() { ... };

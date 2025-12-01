@@ -35,16 +35,21 @@ Example (Dynamic Scope Concept — NOT JS)
 -
 If JS had dynamic scope:*/
 
-let c= 10;
+var c = 1;
 
 function foo() {
   console.log(c);
 }
 
 function bar() {
-  let a = 20;
-  foo();  // would print 20 in dynamic scope
+  var a = 2;
+  function baz() {
+    foo(); // would print 2 in dynamic scope
+  }
+  baz();
 }
+
+bar();
 
 
 //But JavaScript is NOT dynamically scoped, so this never happens in JS.

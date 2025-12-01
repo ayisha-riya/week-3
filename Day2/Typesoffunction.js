@@ -166,3 +166,24 @@ function add(a) {
 }
 
 console.log(add(1)(2)(3)); // 6
+
+/*
+Named Function Expression
+-------------------------
+A function expression that has its own internal name.
+*/
+const greet = function sayHello() {
+  console.log("Hello");
+};
+
+/*
+Duplicate Function Names 
+-------------------------
+If two functions have the same name in the same scope,
+the last one overwrites the previous one.
+
+*/
+function add() { return 1; }
+function add() { return 2; }
+
+console.log(add()); 
